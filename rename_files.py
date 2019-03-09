@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-'''Python script to rename files or directories in a specified directory/folder
+'''\
+Python script to rename files or directories in a specified directory/folder
 '''
 
 import os
