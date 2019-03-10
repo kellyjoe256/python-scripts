@@ -18,7 +18,7 @@ def print_error_message(message):
 
 
 def check_answer(answer, expected_input, allow_empty_answer):
-    r'''Checks if answer passes a given criteria
+    '''Checks if answer passes a given criteria
 
     answer: Answer given by user to be checked
 
