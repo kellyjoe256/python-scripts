@@ -138,7 +138,7 @@ def rename_file(old_filename, new_filename):
     try:
         os.rename(old_filename, new_filename)  # OR use shutil package
         return True
-    except OSError:
+    except (OSError, PermissionError):
         return False
 
 
@@ -167,10 +167,10 @@ def rename_files(directory, search, replace,
     '''
     try:
         os.chdir(directory)
-    except PermissionError:
+    except (OSError, PermissionError):
         error_message = 'Access to directory "' + directory + '" denied'
         print_error_message(error_message)
-        exit()
+        return counter
 
     directories = []
     for file in os.listdir():
