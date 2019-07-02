@@ -107,21 +107,11 @@ def get_new_filename(filename, search, replace):
 
     returns: Changed file name
     '''
-    regex_special_chars = (
-        '.', '^', '$', '[', ']', '-', '(',
-        ')', '*', '+', '{', '}', '?', '|'
-    )
     regex = None
     if search == ' ':
         regex = r'\s+'
     else:
-        for special_char in regex_special_chars:
-            if special_char not in search:
-                continue
-            # escape the special character
-            search = search.replace(
-                special_char, '\\' + special_char, search.count(special_char))
-        regex = r'' + search
+        regex = r'{0}'.format(re.escape(search))
     filename_parts = re.split(regex, filename)
     return replace.join(filename_parts)
 
