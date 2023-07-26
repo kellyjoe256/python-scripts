@@ -2,7 +2,7 @@ astroid==2.2.5
 autopep8==1.4.3
 blessings==1.7
 bpython==0.17.1
-certifi==2022.12.7
+certifi==2023.7.22
 chardet==3.0.4
 curtsies==0.3.0
 entrypoints==0.3
